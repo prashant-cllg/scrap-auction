@@ -1,20 +1,9 @@
 {% extends 'adminhome.html' %}
-{% block header %}
-<div id="header">
-  <div id="logo">
-    <div id="logo_text">
-      <!-- class="logo_colour", allows you to change the colour of the text -->
-      <h1><a href="index.html">The<span class="logo_colour">ScrapAuction</span></a></h1>
-      <h2>The World is Here....Where are you!</h2>
-      <br>
-      <font color="greenyellow">welcome:{{sunm}}</font>
 
-    </div>
-{% endblock  %}
 
 {% block menu %}
 
-<div id="menubar"> 
+<div id="menubar">
 <ul id="menu">
 <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
 <li><a href="/myadmin/">Admin Home</a></li>
@@ -44,7 +33,7 @@
 <style>
   /* Dropdown Button */
   .dropbtn {
-    background: #5A5A5A url(tab.png) no-repeat 100% 0;
+    background: #008b8b url(tab.png) no-repeat 100% 0;
     color: white;
     padding: 7.5px;
     width: 115px;
@@ -53,7 +42,7 @@
     border: none;
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
-    border-radius: 11px 11px 0px 0px;
+    border-radius: 0px;
   }
   .dropbtn:hover{
     color:orange;
@@ -64,8 +53,8 @@
     display: inline-block;
     font-family: sans-serif;
   }
-  
-  
+
+
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     display: none;
@@ -76,23 +65,31 @@
     z-index: 1;
     font-family: sans-serif;
   }
-  
+
+  #menu li a {
+    background: darkcyan;
+    height: 30px;
+    line-height: 10px;
+  }
+  #header-wrapper, #header {
+    overflow: inherit !important;
+  }
   /* Links inside the dropdown */
   .dropdown-content a {
     color: rgb(247, 241, 241);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    background: #5A5A5A url(tab.png) no-repeat 100% 0;
+    background: #008b8b url(tab.png) no-repeat 100% 0;
   }
-  
+
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: rgb(179, 226, 84);
   color:orange;}
-  
+
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
-  
+
   /* Change the background color of the dropdown button when the dropdown content is shown */
   /* .dropdown:hover .dropbtn {background-color: yellowgreen;} */
   </style>
@@ -115,13 +112,13 @@
 <th>Gender</th>
 <th>Info</th>
 <th>Status</th>
-<th>Action</th>    
-</tr>    
+<th>Action</th>
+</tr>
 <tr><td colspan="10"><hr/></td></tr>
 {% for row in userDetails %}
 <tr>
 <td>{{row.regid}}</td>
-<td>{{row.name}}</td>    
+<td>{{row.name}}</td>
 <td>{{row.username}}</td>
 <td>{{row.mobile}}</td>
 <td>{{row.address}}</td>
@@ -133,7 +130,7 @@
 <a href="/myadmin/manageuserstatus/?status=block&regid={{row.regid}}" style="color:orange;">Block User</a>
 {% else %}
 <a href="/myadmin/manageuserstatus/?status=verify&regid={{row.regid}}" style="color:green;">Verify User</a>
-{% endif %}    
+{% endif %}
 </td>
 <td><a href="/myadmin/manageuserstatus/?status=delete&regid={{row.regid}}" style="color:red;">Delete User</a></td>
 </tr>
