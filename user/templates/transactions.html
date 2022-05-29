@@ -1,0 +1,34 @@
+{% extends 'userhome.html' %}
+
+
+{% block content %}
+
+<div style="height:200px;">
+<center>    
+<h1>Transactions History</h1>
+<br>
+
+<table cellspacing="20">
+    <tr>
+    <th>Transaction ID</th>
+    <th>User ID</th>
+    <th>Price</th>
+    <th>Info</th>   
+    </tr>    
+    <tr><td colspan="10"><hr/></td></tr>
+    {% for row in ob %}
+    <tr>
+    <td>{{row.txnid}}</td>
+    <td>{{row.uid}}</td>    
+    <td>{{row.price}}</td>
+    <td>{{row.info}}</td>
+    <td>
+
+    <tr><td colspan="10"><hr/></td></tr>
+    {% endfor %}
+    
+    </table>
+    
+    </div>
+    </center>
+    {% endblock %}

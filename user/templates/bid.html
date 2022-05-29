@@ -1,0 +1,34 @@
+{% extends 'userhome.html' %}
+
+{% block content %}
+<div style="min-height:200px;">
+    <center>    
+    <br>
+    {% if status %}
+    <h2>Bidding Completed</h2>
+    <a>click to view bid result</a>
+    {% else %}
+    <h1>Bid Product Here</h1>
+    <br/>
+    <form method="post" action="/user/bid/">
+    {% csrf_token %}    
+    <label>ProductID</label>    
+    <input type="text" name="pid" value="{{pDetails.pid}}" readonly />
+    <br/><br/>
+    <label>Base Price</label>    
+    <input type="text" name="bprice" value="{{pDetails.baseprice}}" readonly />
+    <br/><br/>
+    <label>Current Price</label>    
+    <input type="text" name="cprice" value="{{cprice}}" />
+    <br/><br/>
+    <label>Your Bid Price</label>    
+    <input type="text" name="bidprice"  />
+    <br/><br/>
+    <input type="submit" value="Bid Product" />
+    </form>
+    
+    {% endif %}
+    </center>
+    </div>
+    {% endblock %}
+

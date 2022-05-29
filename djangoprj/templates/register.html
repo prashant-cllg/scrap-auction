@@ -1,0 +1,107 @@
+{% extends 'masterpage.html' %}
+{% block para %}
+{% endblock %}
+
+{% block content %}
+
+<div style="min-height:300px ;">
+	<script>
+		function checkEmail(emailid){
+				var xhttp = new XMLHttpRequest()
+				xhttp.open("GET","http://localhost:8000/checkEmail/?emailid="+emailid,true)
+				xhttp.send()
+				xhttp.onreadystatechange=function(){
+					if(xhttp.status==200 && xhttp.readyState==4){
+						var ref=document.getElementById("response")
+						if(xhttp.responseText==0){
+							ref.innerHTML="*EmailId available"
+							ref.style.color="green"
+						} else{
+							ref.innerHTML="*EmailId already exists"
+							ref.style.color="red"
+						}
+					}
+				}
+			}
+	</script>
+	<div style="min-height:300px ;">
+		<fieldset>
+			<div class="form-container">
+				{% if output %}
+					<font color="red">{{output}}</font>
+					<hr>
+				{% endif %}
+				<legend><h3>Register Here</h3></legend>
+				<form method="POST" action="/register/">
+					{% csrf_token %}
+
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" name="name" placeholder="Enter name" required class="form-control rounded-pill">
+					</div>
+					<br>
+
+					<div class="form-group">
+						<label for="username">Email address</label>
+						<input id="user_email" name="username" placeholder="Enter username/Email" required class="form-control rounded-pill">
+					</div>
+					<br>
+
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" name="password" placeholder="Enter password" required class="form-control rounded-pill">
+					</div>
+					<br>
+
+					<div class="form-group">
+						<label for="name">Mobile</label>
+						<input type="number" name="mobile" placeholder="Enter mobile" required class="form-control rounded-pill">
+					</div>
+					<br>
+
+					<div class="form-group">
+						<label for="name">Gender</label>
+						<div class="container pt-2 border pb-1 rounded-pill">
+							<input type="radio" name="gender" value="male"> Male &nbsp;
+							<input type="radio" name="gender" value="female"> Female
+						</div>
+					</div>
+					<br>
+
+
+					<div class="form-group">
+						<label for="name">Full Address</label>
+						<input type="text" name="address" placeholder="Enter address" required class="form-control rounded-pill">
+					</div>
+					<br>
+
+					<div class="form-group">
+						<label for="name">Select City</label>
+						<select style="width:100%;" name="city" required  class="form-control rounded-pill">
+							<option>Select City</option>
+							<option>Indore</option>
+							<option>Ujjain</option>
+							<option>Bhopal</option>
+							<option>Delhi</option>
+							<option>Bombay</option>
+						</select>
+					</div>
+					<br>
+					<input type="submit" name="s" value="Register" class="btn btn-success">
+				</form>
+			</div>
+		</fieldset>
+		<br><br>
+		<br><br>
+		<style>
+			.form-container {
+				margin: 20px auto;
+				width: 50%;
+				border: 1px solid gray;
+				padding: 10px;
+				border-radius: 5px;
+			}
+		</style>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'masterpage.html' %}
+
+{% block menu %}
+<div id="menubar">
+  <font color="greenyellow"> welcome user : {{sunm}}</font> 
+    <ul id="menu">
+
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="/user/">User Home</a></li>
+          <li><a href="/user/viewbidproduct/">View Product</a></li>
+  
+    <div class="dropdown">
+      <button class="dropbtn">Setting</button>
+      <div class="dropdown-content">
+        <a href="/user/cpuser/">Change Password</a>
+        <a href="/user/epuser/">Edit Profile</a>
+      </div>
+    </div>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Payments</button>
+      <div class="dropdown-content">
+        <a href="/user/funds/">Funds for Charity</a>
+        <a href="/user/transactions/">History</a>
+      </div>
+    </div>
+    
+
+    <li ><a href="/login/">Logout</a></li>
+    </ul>
+    </div>
+    
+    
+    
+    <style>
+      /* Dropdown Button */
+      .dropbtn {
+        background: #5A5A5A url(tab.png) no-repeat 100% 0;
+        color: white;
+        padding: 7.5px;
+        width: 115px;
+        height: 31px;
+        font-size: 11px;
+        border: none;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 14px;
+        border-radius: 11px 11px 0px 0px;
+      }
+      .dropbtn:hover{
+        color:orange;
+      }
+      /* The container <div> - needed to position the dropdown content */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        font-family: sans-serif;
+      }
+      
+      
+      /* Dropdown Content (Hidden by Default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgb(0,0,0,0.2);
+        z-index: 1;
+        font-family: sans-serif;
+      }
+      
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        color: rgb(247, 241, 241);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background: #5A5A5A url(tab.png) no-repeat 100% 0;
+      }
+      
+      /* Change color of dropdown links on hover */
+      .dropdown-content a:hover {background-color: rgb(179, 226, 84);
+      color:orange;}
+      
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {display: block;}
+      
+      /* Change the background color of the dropdown button when the dropdown content is shown */
+      /* .dropdown:hover .dropbtn {background-color: yellowgreen;} */
+      </style>
+    
+
+
+
+      {% endblock %}
+
+{% block content %}
+      <div style="height:200px;">
+      <h1 style="color:yellowgreen"> Dear User  <br>Welcome to Scrap Auction  </h1>
+      </div>
+{% endblock %}

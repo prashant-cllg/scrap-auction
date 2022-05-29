@@ -1,0 +1,44 @@
+{% extends 'adminhome.html' %}
+
+{% block content %}
+<center>
+<div style="min-height:200px;">
+
+    <h2>Add Product Here!!!</h2>
+    <font color="blue">{{output}}</font>
+    <form method="POST" action="/myadmin/addproduct/" >
+    {% csrf_token %}    
+    <table cellspacing="10">
+    <tr>
+    <td>Auction title</td>
+    <td><input type="text" name="atitle" placeholder="Enter Auction Title" required /></td>    
+    </tr>    
+    <tr>
+    <td>Category</td>
+    <td>
+    <select name="acategory" style="width:100%;">
+    <option>Select Category</option>    
+    {% for row in sclist %}
+    <option>{{row.subcatname}}</option>
+    {% endfor %}
+    </select>    
+    </td>    
+    </tr>
+    <tr>
+    <td>Auction description</td>
+    <td><textarea rows="5" type="text" name="adescription" placeholder="Enter Auction Description" required></textarea></td>    
+    </tr>
+    <tr>
+    <td>Base price</td>
+    <td><input type="text" name="baseprice" placeholder="Enter Base Price" required /></td>    
+    </tr>
+    <tr>
+    <td><input type="submit" name="s" value="Add Auction" /></td>    
+    </tr>
+    
+    </table>    
+    </form>
+
+</div>
+</center>
+{% endblock %}

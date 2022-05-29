@@ -1,0 +1,56 @@
+{% extends 'userhome.html' %}
+{% block content %}
+<center>
+<div style="min-height:200px;">
+
+    <h2>Edit Profile Here!!!</h2>
+    <font color="blue">{{output}}</font>
+    <form method="POST" action="/user/epuser/" >
+    {% csrf_token %}    
+    <table cellspacing="10">
+    <tr>
+    <td><font color="red">*</font>Name</td>
+    <td><input type="text" name="name" value="{{userDetails.name}}" required /></td>    
+    </tr>
+    <tr>
+    <td><font color="red">*</font>Username</td>
+    <td>
+    <input type="email" name="username" value="{{userDetails.username}}" readonly  />
+    </td>    
+    </tr>    
+    <tr>
+    <td><font color="red">*</font>Mobile</td>
+    <td><input type="number" name="mobile" value="{{userDetails.mobile}}" required /></td>    
+    </tr>
+    <tr>
+    <td>Address</td>
+    <td><textarea name="address" rows="5" >{{userDetails.address}}</textarea></td>    
+    </tr>
+    <tr>
+    <td><font color="red">*</font>City</td>
+    <td>
+    <select style="width:100%;" name="city" required >
+    <option>{{userDetails.city}}</option>
+    <option>Indore</option>    
+    <option>Ujjain</option>
+    <option>Bhopal</option>
+    </select>
+    </td>    
+    </tr>
+    <tr>
+    <td>Gender</td>
+    <td>
+    Male <input type="radio" name="gender" value="male" {{m}}  />
+    &nbsp;&nbsp;
+    Female <input type="radio" name="gender" value="female" {{f}} />
+    </td>    
+    </tr>
+    <tr>
+    <td><input type="submit" name="s" value="Edit Profile" /></td>    
+    </tr>
+    </table>    
+    </form>
+
+</div>
+</center>
+{% endblock %}

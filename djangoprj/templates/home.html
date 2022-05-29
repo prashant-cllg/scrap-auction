@@ -1,0 +1,82 @@
+{% extends 'masterpage.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="post" >
+        {% block banner %}
+        <!-- <div class="entry" style="height:fit-content ;">
+            <span><a href="#"><img src="{% static 'images/banner-image.jpg' %}" width="1100" height="500" alt="" /></a></span>
+        </div> -->
+        <div id="ww">
+            <div class="container">
+                <div class="row">
+                    <div class="centered">
+                        <h1 id="welcome_text">Welcome to Scrap e-Auction</h1>
+                        <h3>Simplified and Transparent online Scrap Auction</h3>
+                        <br><br>
+                        <p>
+                            <a href="/auction_process/" class="btn btn-large btn-success btn-sea">Auction Process</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="/register/" class="btn btn-large btn-success btn-sea">Register With Us</a>
+                        </p>
+                    </div>
+                    <!-- /col-lg-8 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        {% endblock %}
+    </div>
+    <img src="{% static 'banner-image.jpg' %}" width="1100" height="400" alt="" />
+    <div class="container">
+        <div class="home-container">
+            <h3>
+                Best Online Auction Site Providing 100% Reliable and Secured Auctioning-Bidding Services
+            </h3>
+            <p>
+                Winter is one of the important seasons in the world and also in India Basically winter is the season with lowest temperature ratio Winter generally starts in the month of November/December and lasts up to February/March Shorter days and longer night are the primary effects of winter season.
+            </p>
+        </div><br><br>
+        <div class="home-container">
+            <h3>
+                EXCLUSIVE FEATURES SALASAR ONLINE AUCTION HOUSE PROVIDES
+            </h3>
+            <br>
+            <ul class="ul-listing">
+                <li>DYNAMIC MODULE</li>
+                <p class="font22">Our e-auction solutions give clients a dynamic gateway to sell or bid for items quickly in a few clicks. Connect with us and experience cloud-based digital auctioning that will take care of all your needs</p>
+                <li>USER-FRIENDLY AUCTIONING-BIDDING PLATFORM</li>
+                <p class="font22">Placing a bid, or live-auctioning any item on our platform is quite an easy process. You just have register yourself and rest assured that you are managed by India's number one Online Auction House.</p>
+                <li>TRANSPARENCY</li>
+                <p class="font22">Providing a hundred percent transparency is one of our greatest assets that has carried our reputation in the market for years. You can view the entire ongoing live-auctions on your dashboard. Along with that our team ensures to give you a detailed transaction report so as to make our services more apparent.</p>
+                <li>100% SECURED ONLINE AUCTION MARKET</li>
+                <p class="font22">We know that data theft is a big concern these days, and to counter the same we have tried our best for protecting all sorts of personal information included in our database. We use industry-standard encryption and firewall protection so as to safeguard your network from malicious software.</p>
+            </ul>
+        </div>
+        <br><br>
+    </div>
+    <style>
+        .home-container {
+            border: 1px solid #cdcdcd;
+            border-radius: 5px;
+            margin: 10px auto;
+            box-shadow: 1px 2px 5px 1px #e1e1e1;
+        }
+
+        .home-container h3 {
+            padding: 10px;
+            padding: 10px;
+            color: #fff;
+            background: #34495e;
+        }
+
+        .home-container p {
+            padding: 10px;
+        }
+        #wrapper {
+            padding-bottom: 0;
+        }
+
+    </style>
+{% endblock %}
