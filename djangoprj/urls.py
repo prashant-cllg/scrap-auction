@@ -14,7 +14,7 @@ urlpatterns = [
     path('login/',views.login),
     path('about/',views.about),
     path('responseurl/',views.responseurl),
-    path('service/',views.service),
+    path('auction_process/',views.auction_process),
     path('myadmin/', include('myadmin.urls')),
     path('user/', include('user.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

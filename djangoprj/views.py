@@ -16,8 +16,8 @@ def contact(request):
 def about(request):
     return render(request,"about.html")
 
-def service(request):
-    return render(request,"service.html")
+def auction_process(request):
+    return render(request,"auction_process.html")
 
 def register(request):
     if request.method=="GET":
